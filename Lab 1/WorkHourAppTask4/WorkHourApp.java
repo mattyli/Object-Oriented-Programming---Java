@@ -14,8 +14,8 @@ public class WorkHourApp {
         obj.numdays = Integer.valueOf(input.nextLine());
 
         for (int day = 1; day <= obj.numdays; day++){
-            System.out.println("Day" + Integer.toString(day) + ", Total Hours worked =" + Integer.toString(day * obj.hoursperday));3
-            
+            System.out.println("Day" + Integer.toString(day) + ", Total Hours worked =" + Integer.toString(day * obj.hoursperday));
+
         }
 
         input.close();
