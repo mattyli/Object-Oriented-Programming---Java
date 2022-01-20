@@ -11,7 +11,7 @@ public class Lab1Task4 {
         obj.multiplier = Integer.valueOf(input.nextLine());
 
         for (int idx = 1; idx <= 20; idx++){
-            System.out.println(Integer.toString(idx*obj.multiplier));
+            System.out.print(Integer.toString(idx*obj.multiplier) + " ");
         }
 
         input.close(); // need to close the input
