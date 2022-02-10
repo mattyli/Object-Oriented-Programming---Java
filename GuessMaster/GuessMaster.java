@@ -22,7 +22,6 @@ public class GuessMaster {
         Boolean tryAgain = true;
         System.out.printf("Guess %s' birthday!\n", entity.getName());
         while(tryAgain){
-            
             guess.readInput();
             if (entity.getBorn().equals(guess)){
                 System.out.println("Bingo you got it!");

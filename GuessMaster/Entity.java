@@ -45,12 +45,10 @@ public final class Entity {
         return (this.born);
     }
 
-
     public Boolean equals(Entity entity){
         if (entity == null){
             return false;
         }
-
         else{
             if((entity.getName() == this.name) && (entity.getBorn() == this.born)){
                 return true;

@@ -2,6 +2,7 @@
  * I DO NOT TAKE CREDIT FOR THIS FILE
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Date
@@ -50,15 +51,13 @@ public class Date
      *  Format needs to be MM/DD/YYYY
      *  Call the private dateOK() method to verify
      */
-    public Date(String strDate){
-        String[] arrOfDates = strDate.split("/",-2);
-        Integer tempMonth, tempDay, tempYear;
-        tempMonth = Integer.parseInt(arrOfDates[0]);
-        tempDay = Integer.parseInt(arrOfDates[1]);
-        tempYear = Integer.parseInt(arrOfDates[2]);
 
-        if (dateOK(tempMonth, tempDay, tempYear)){
-            setDate(tempMonth, tempDay, tempYear);
+    public Date(String strDate){
+        Integer[] arr = new Integer[3];
+        arr = splitStr(strDate);
+
+        if (dateOK(arr[0], arr[1], arr[2])){
+            setDate(arr[0], arr[1], arr[2]);
         }
         else{
             System.out.println("Fatal Error, date is invalid");
@@ -216,13 +215,10 @@ public class Date
             }
             else{
                 if (dateOK(dateinput)){
-                    String[] arrOfDates = dateinput.split("/",-2);
-                    Integer tempMonth, tempDay, tempYear;
-                    tempMonth = Integer.parseInt(arrOfDates[0]);
-                    tempDay = Integer.parseInt(arrOfDates[1]);
-                    tempYear = Integer.parseInt(arrOfDates[2]);
+                    Integer[] arr = new Integer[3];
+                    arr = splitStr(dateinput);
 
-                    setDate(tempMonth, tempDay, tempYear);
+                    setDate(arr[0], arr[1], arr[2]);
                     tryAgain = false;
                     break;
                 }
@@ -233,17 +229,23 @@ public class Date
          }
     }
 
-
+    // prototype splitting helper function
+    // will split the date into the appropriate values (input format is assumed to be correct)
+    private Integer[] splitStr(String strDate){
+        Integer[] arr = new Integer[3];
+        String[] arrOfDates = strDate.split("/",-2);
+        
+        for (int i = 0; i < 3; i++){
+            arr[i] = Integer.parseInt(arrOfDates[i]);
+        }
+        return arr;
+    }
     // Returns true/false
     // Added by Matthew Li
     private Boolean dateOK(String strDate){
-        String[] arrOfDates = strDate.split("/",-2);
-        Integer tempMonth, tempDay, tempYear;
-        tempMonth = Integer.parseInt(arrOfDates[0]);
-        tempDay = Integer.parseInt(arrOfDates[1]);
-        tempYear = Integer.parseInt(arrOfDates[2]);
-
-        if (dateOK(tempMonth, tempDay, tempYear)){
+        Integer[] arr = new Integer[3];
+        arr = splitStr(strDate);
+        if (dateOK(arr[0], arr[1], arr[2])){
             return true;
         }
         else{
@@ -312,7 +314,12 @@ public class Date
 
     // Main function for debugging and testing
     // DELETE/ COMMENT OUT AFTER
-    public static void main(String[] args){
-        Date newDate = new Date("13/15/2002");
-    }
+    // public static void main(String[] args){
+    //     Date date = new Date();
+    //     String teststr = "12/07/1867";
+    //     Integer[] testArr = new Integer[3];
+    //     testArr = date.splitStr(teststr);
+    //     System.out.println(Arrays.toString(testArr));
+        
+    // }
 }
