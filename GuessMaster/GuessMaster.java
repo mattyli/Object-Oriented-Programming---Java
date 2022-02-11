@@ -70,16 +70,22 @@ public class GuessMaster {
         GuessMaster gm = new GuessMaster();
 
         Entity trudeau = new Entity("Justin Trudeau", new Date("December", 25, 1971));
+        Entity faketrudeau = new Entity("Justin Trudeau", new Date("December", 25, 1971));
         Entity dion = new Entity("Celine Dion", new Date("March", 30, 1968));
         Entity usa = new Entity("United States", new Date("July", 4, 1776));
         Entity Matty = new Entity("Matthew Li", new Date("November", 15, 2002));
         Entity Canada = new Entity("Canada", new Date("July", 1, 1867));
        
         gm.addEntity(trudeau);
+        gm.addEntity(faketrudeau);
         gm.addEntity(dion);
         gm.addEntity(usa);
         gm.addEntity(Matty);
         gm.addEntity(Canada);
+
+        System.out.println(Boolean.toString(trudeau.equals(faketrudeau)));
+        System.out.println(Boolean.toString(trudeau.equals(Matty)));
+
        
 
         // game starts here

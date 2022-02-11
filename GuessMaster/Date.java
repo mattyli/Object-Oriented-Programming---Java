@@ -2,7 +2,7 @@
  * I DO NOT TAKE CREDIT FOR THIS FILE
  */
 
-import java.util.Arrays;
+
 import java.util.Scanner;
 
 public class Date
@@ -189,7 +189,7 @@ public class Date
 	    if (otherDate == null)
 	        return false;
 	    else
-	        return ( (month.equals(otherDate.month)) &&
+	        return ((month.equals(otherDate.month)) &&
 	            (day == otherDate.day) && (year == otherDate.year) );
     }
 
@@ -224,8 +224,7 @@ public class Date
                 }
                 else
                     System.out.println("Illegal date. Reenter input.");
-            }
-            
+            }  
          }
     }
 
@@ -245,14 +244,9 @@ public class Date
     private Boolean dateOK(String strDate){
         Integer[] arr = new Integer[3];
         arr = splitStr(strDate);
-        if (dateOK(arr[0], arr[1], arr[2])){
-            return true;
-        }
-        else{
-            return false;
-        }
-
+        return (dateOK(arr[0], arr[1], arr[2]));
     }
+    
     private boolean dateOK(int monthInt, int dayInt, int yearInt)
     {
         return ( (monthInt >= 1) && (monthInt <= 12) &&

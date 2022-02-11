@@ -50,12 +50,7 @@ public final class Entity {
             return false;
         }
         else{
-            if((entity.getName() == this.name) && (entity.getBorn() == this.born)){
-                return true;
-            }
-            else{
-                return false;
-            }
+            return((entity.getName().equals(this.name)) && (entity.getBorn().equals(this.born)));
         }
     }
 }
