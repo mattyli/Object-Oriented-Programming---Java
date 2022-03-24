@@ -1,0 +1,1 @@
+- Arraylist has mutable size, can change during runtime

@@ -12,9 +12,9 @@ public class HourlyEmployee extends Employee
     private double wageRate;
     private double hours; //for the month
 
-    public HourlyEmployee( )
+    public HourlyEmployee()
     {
-        super( );
+        super();
         wageRate = 0;
         hours = 0;
     }
