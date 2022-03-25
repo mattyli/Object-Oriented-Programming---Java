@@ -1,41 +1,35 @@
 /*
-    ClassName<Type> --> making a generic class
-    Can be any data type
-
+    Lab 5 - ELEC 279
+    March 24, 2022
+    Matthew Li   - 20217346
+    Jacob O'Neil - 20221893
 */
 
 public class Pair<T> {
     // instance variable declaration
-    private T obj1;
-    private T obj2;
+    private T wife;
+    private T husband;
 
     public Pair(){
-        this.obj1 = null;
-        this.obj2 = null;
+        this.wife = null;
+        this.husband = null;
     }// default constructor
 
     public Pair(T f1, T f2){
-        this.obj1 = f1;
-        this.obj2 = f2;
+        this.wife = f1;
+        this.husband = f2;
     }// constructor
-
-    // public Pair(T copied){
-    //     this.obj1 = copied.obj1;
-    //     this.obj2 = copied.obj2;
-    // }// copy constructor
-
-    // error in the copy constructor
     
-    public T getObj1(){
-        return this.obj1;
+    public T getwife(){
+        return this.wife;
     }
-    public T getObj2(){
-        return this.obj2;
+    public T gethusband(){
+        return this.husband;
     }
 
 
     public String toString(){
-        return ("field 1: " + obj1.toString() + " , field 2: " + obj2.toString() +"\n");     // depending on the object type, call that types toString
+        return ("Wife's name: " + wife.toString() + "; Husband's name: " + husband.toString() +"\n");     // depending on the object type, call that types toString
     }
 
     public boolean equals(Object otherObj){
@@ -47,7 +41,7 @@ public class Pair<T> {
         }
         else{
             Pair<T> otherPair = (Pair<T>)otherObj;          // downcasting
-            return (obj1.equals(otherPair.obj1) && obj2.equals(otherPair.obj2));
+            return (wife.equals(otherPair.wife) && husband.equals(otherPair.husband));
         }
     }
 

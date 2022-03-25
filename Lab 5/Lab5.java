@@ -1,3 +1,10 @@
+/*
+    Lab 5 - ELEC 279
+    March 24, 2022
+    Matthew Li   - 20217346
+    Jacob O'Neil - 20221893
+*/
+
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -64,24 +71,30 @@ public class Lab5 {
 
         listOfHourlyEmployees.trimToSize();                                     // making capacity = size
 
-        /*
-            Testing the custom generic classes
-        */
+        // Testing code
 
-        
-        Pair<String> couple1 = new Pair<String>("Janice", "Rob");
-        Pair<String> couple2 = new Pair<String>("Janice", "Rob");
-        Pair<String> couple3 = new Pair<String>("Karen", "Rob");
+        Pair<String> couple1 = new Pair<String>("Julia", "Tom");
+        Pair<String> couple2 = new Pair<String>("Julia", "Tom");
+        Pair<String> couple3 = new Pair<String>("Judy", "Tom");
+
+        System.out.println("first pair==> " + couple1.toString());
+        System.out.println("second pair==> " + couple2.toString());
+        System.out.println("third pair==> " + couple3.toString());
     
-        System.out.println(Boolean.toString(couple1.equals(couple3)));
-        System.out.println(couple3.toString());
+        System.out.println("first and second pair are equal?" + Boolean.toString(couple1.equals(couple2)));
+        System.out.println("first and third pair are equal?" + Boolean.toString(couple1.equals(couple3)));
 
         Triple<String, Double> trip1 = new Triple<>("Toronto", 547.0, "Montreal");
         Triple<String, Double> trip2 = new Triple<>("Toronto", 547.0, "Montreal");
-        Triple<String, Double> trip3 = new Triple<>("Yukon", 23447.0, "Montreal");
+        Triple<String, Double> trip3 = new Triple<>("Yukon", 264.5, "Montreal");
 
-        System.out.println(trip1.toString());
-        System.out.println(Boolean.toString(trip1.equals(trip3)));
+        System.out.println("first triple==> " + trip1.toString());
+        System.out.println("second triple==> " + trip2.toString());
+        System.out.println("third triple==> " + trip3.toString());
+
+        System.out.println("first and second triple are equal? " + Boolean.toString(trip1.equals(trip2)));
+        System.out.println("first and third triple are equal? " + Boolean.toString(trip1.equals(trip3)));
+
 
 
     }

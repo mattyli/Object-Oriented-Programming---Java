@@ -1,26 +1,30 @@
-// 2 type class
-
+/*
+    Lab 5 - ELEC 279
+    March 24, 2022
+    Matthew Li   - 20217346
+    Jacob O'Neil - 20221893
+*/
 public class Triple<T1, T2> {
-    private T1 field1;
-    private T2 field2;
-    private T1 field3;
+    private T1 origin;
+    private T2 distance;
+    private T1 destination;
 
 
     public Triple(){
-        this.field1 = null;
-        this.field2 = null;
-        this.field3 = null;
+        this.origin = null;
+        this.distance = null;
+        this.destination = null;
     }// default constructor
 
     public Triple(T1 f1, T2 f2, T1 f3){
-        this.field1 = f1;
-        this.field2 = f2;
-        this.field3 = f3;
+        this.origin = f1;
+        this.distance = f2;
+        this.destination = f3;
     }// arguement constructor
 
     public String toString(){
-        return ("field 1: " + field1.toString() + ", field 2: " + field2.toString() + ", field 3: " + field3.toString() + "\n");
-    }
+        return ("Departure city: " + origin.toString() + "; Distance: " + distance.toString() + "; Arrival city: " + destination.toString() + "\n");
+    }// calling each fields respective toString() method
 
     public boolean equals(Object otherObj){
         if (otherObj == null){
@@ -31,7 +35,7 @@ public class Triple<T1, T2> {
         }
         else{
             Triple<T1, T2> otherTrip = (Triple<T1, T2>)otherObj;          // downcasting
-            return (field1.equals(otherTrip.field1) && field2.equals(otherTrip.field2) && field3.equals(otherTrip.field3));
+            return (origin.equals(otherTrip.origin) && distance.equals(otherTrip.distance) && destination.equals(otherTrip.destination));
         }
     }
     
