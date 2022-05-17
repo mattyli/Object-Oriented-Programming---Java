@@ -40,6 +40,20 @@ public class InterStudent extends Student implements Comparable {
         }
     }// thsi method could work
 
+    // WILL WORK
+    /**
+     * public boolean equals(Object other){
+     *      if (other == null) return false;
+     *      else if (other.getClass() != this.getClass()){
+     *              return false;
+     *          }
+     *      else{
+     *              downcast from object
+     *          }
+     * }
+     * 
+     */
+
     public int compareTo(InterStudent otherInter){
         if (this.name.equals(otherInter.getName())){
             if (this.born.equals(otherInter.getBorn())){
@@ -51,8 +65,10 @@ public class InterStudent extends Student implements Comparable {
             return this.born.compareTo(otherInter.born);
         }
         return this.name.compareTo(otherInter.name);
-    }
+    }// more accurate compareTo() than just returning -1
     // implement the compareTo()
+    // Use the equals() of this class and other classes for the conditional
+    // getters and setters, they will work regardless, using dot notation will probably not work
 
     public InterStudent clone(){
         return new InterStudent(this);  // using copy constructor

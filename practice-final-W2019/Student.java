@@ -51,8 +51,9 @@ public class Student {
         }
     }
 
+
     public Student clone(){
         return new Student(this);
-    }
+    }// use copy constructor here
 }
 
